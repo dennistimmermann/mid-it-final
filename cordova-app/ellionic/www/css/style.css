@@ -1,0 +1,58 @@
+/* Empty. Add your own CSS if you like */
+
+.hardware-info {
+	font-size: 0.75em;
+	line-height: 1em;
+	padding: 10px;
+	color:grey;
+}
+
+.pane {
+	background-color:transparent;
+}
+
+.opaque {
+	background-color: #fff;
+}
+
+.bg-view {
+	background: url(../img/bg.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	background-size: cover;
+	-webkit-transition: background 1s;
+	transition: background 1s;
+}
+
+.bg-vanish {
+	background: transparent;
+	-webkit-transition: background 1s;
+	transition: background 1s;
+}
+
+.item.active {
+	background-color:#EFF3BE
+}
+
+.item.activated {
+	background-color:#EAF399
+}
+
+.tabs-positive > .tabs {
+	background-color: #222;
+	border-color: #383A2A;
+}
+
+.about-center-logo {
+	width: 100%;
+	text-align: center;
+}
+
+.about-logo {
+	padding:10%;
+	width: 50%;
+}
+
+.about-text {
+	font-size: 1.2em;
+	margin: 5%;
+}

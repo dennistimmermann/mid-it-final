@@ -1,0 +1,13 @@
+<div class="animate-repeat" ng-repeat="control in device.controls">
+	<!-- check for different control types, one for now -->
+	<div ng-if="isControl(control.type, 'toggle')">
+		<ion-toggle ng-model="device.states[control.id]" toggle-class="toggle-calm" ng-change="changed(device,  control.id)">{{control.label}}</ion-toggle>
+	</div>
+	<div ng-if="isControl(control.type, 'button')">
+		is button
+	</div>
+</div>
+<pre class="hardware-info">
+	epID: {{device.epid}}
+	uuID: {{device.uuid}}
+</pre>

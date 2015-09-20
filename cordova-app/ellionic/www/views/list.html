@@ -1,0 +1,33 @@
+<ion-view view-title="Devices">
+<div ng-controller="listCtrl">
+
+		<!-- searchbar -->
+		<ion-header-bar class="bar bar-header item-input-inset">
+		  <label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" ng-model="query" placeholder="Filter" aria-label="filter devices" />
+		  </label>
+		  <button class="button button-clear" ng-click="query = ''">
+		    Cancel
+		  </button>
+		</ion-header-bar>
+
+		<ion-content>
+			<ion-list>
+				<!-- for every device -->
+				<div class="animate-repeat" ng-repeat="device in data | filter:query as results">
+					<!-- do list title -->
+					<ion-item class="item item-avatar-right" ng-click="toggleGroup(device.uuid)" ng-class="{active: isGroupShown(device.uuid)}">
+						<img src="http://placehold.it/100x100">
+						<h2>{{device.name}}</h2>
+					</ion-item>
+					<!-- !!! include device partial, more logic there -->
+					<div class="item-accordion card" ng-show="isGroupShown(device.uuid)" ng-include src="'partials/device.html'"></div>
+				</div>
+				<div class="animate-repeat" ng-if="results.length == 0">
+		      		<ion-item>Gerät nicht vorhanden oder offline</ion-item>
+		    	</div>
+		    </ion-list>
+	    </ion-content>
+	</div>
+	</ion-view>
